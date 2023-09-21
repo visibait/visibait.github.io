@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>COMP2521 Lecture 1</title>
+    <meta name="description" content="" />
+    <meta property="og:title" content="COMP2521 Lecture 1" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mattlau1.github.io/jas/" />
+    <meta
+      property="og:image"
+      content="https://mattlau1.github.io/jas/jas.png"
+    />
+    <meta
+      property="og:description"
+      content="COMP2521 - Data Structures and Algorithms Lecture 1"
+    />
+    <meta name="theme-color" content="#000000" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="icon" type="image/png" href="/jas.png" />
+  </head>
+
+  <body>
+    <img id="jas" src="jas.png" />
+
+    <audio id="music" src="sound.mp3" autoplay loop muted></audio>
+    <script async defer>
+      const black = document.getElementById("black");
+      const player = document.getElementById("music");
+
+      const swap = async () => {
+        const img = document.getElementById("jas");
+        img.src = "jas.png";
+        await new Promise((r) => setTimeout(r, 100));
+        img.src = "jas2.png";
+        timer = setTimeout(swap, 200);
+      };
+
+      const startEvent = () => {
+        const player = document.getElementById("music");
+        player.muted = false;
+        player.play();
+      };
+      startEvent();
+
+      let timer = setTimeout(swap, 200);
+    </script>
+  </body>
+</html>
